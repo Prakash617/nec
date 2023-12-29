@@ -1,8 +1,13 @@
-{% extends 'base.html' %}
-
-{%block css%}
+{% extends 'base.html' %} {%block css%}
 <style>
-    {% comment %} /* Styles required only for the example above */ {% endcomment %}
+    {
+        % comment %
+    }
+    /* Styles required only for the example above */
+    
+    {
+        % endcomment %
+    }
     
     .btn-toggle {
         display: inline-flex;
@@ -60,381 +65,60 @@
     .lh-tight {
         line-height: 1.25;
     }
-
-    .sidebar_height{
+    
+    .sidebar_height {
         display: inline-block;
         height: auto;
     }
-
-
+    
     @media only screen and (min-width: 768px) {
-        .sidebar_height{
+        .sidebar_height {
             height: 100vh;
         }
-
     }
-
 </style>
 
-{% endblock %}
-
-{% block body %}
-    <div class="row">
-        {% comment %} sidebar-------- {% endcomment %}
-        <div class="col-0 col-md-2  bg-body-tertiary overflow-y-auto sidebar_height">
-            <ul class="list-unstyled ps-0 d-inline-block ">
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                       1. Concept of Basic Electrical and Electronics Engineering 
+{% endblock %} {% block body %}
+<div class="row w-100 g-0">
+    <div class="col-0 col-md-2  bg-body-tertiary overflow-y-auto sidebar_height">
+        <ul class="list-unstyled ps-0 d-inline-block ">
+            {% for category, subcategories in context.items %}
+            <li class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#home-collapse{{ category }}" aria-expanded="false">
+                        {{ category }}
                     </button>
-                    <div class="collapse show" id="home-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">1.1 Basic concept</a></li>
-                            <li><a href="#" class="link-dark rounded">1.2 Network theorems:</a></li>
-                            <li><a href="#" class="link-dark rounded">1.3 Alternating current fundamentals:</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
+                <div class="collapse {% if forloop.first %} show {% endif %}" id="home-collapse{{ category }}" style="">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        {% for subcategory in subcategories %}
+                        <li><a href="#" class="link-dark rounded">{{ subcategory.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+            {% endfor %}
 
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                    Orders
-                </button>
-                    <div class="collapse" id="orders-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">New</a></li>
-                            <li><a href="#" class="link-dark rounded">Processed</a></li>
-                            <li><a href="#" class="link-dark rounded">Shipped</a></li>
-                            <li><a href="#" class="link-dark rounded">Returned</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="border-top my-3"></li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+            <li class="border-top my-3"></li>
+            <li class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
                     Account
                   </button>
-                    <div class="collapse" id="account-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">New...</a></li>
-                            <li><a href="#" class="link-dark rounded">Profile</a></li>
-                            <li><a href="#" class="link-dark rounded">Settings</a></li>
-                            <li><a href="#" class="link-dark rounded">Sign out</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-
-        </div>
-        <div class="col-0 col-md-10 bg-primary">
-            {% block content %}
-            {% endblock %}
-            kjhk
-            kjhkjfa-flip-horizontal
-        </div>
+                <div class="collapse" id="account-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="link-dark rounded">New...</a></li>
+                        <li><a href="#" class="link-dark rounded">Profile</a></li>
+                        <li><a href="#" class="link-dark rounded">Settings</a></li>
+                        <li><a href="#" class="link-dark rounded">Sign out</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
 
     </div>
-    {% endblock %}
+    <div class="col-0 col-md-10 bg-primary">
+        {% block content %} {% endblock %}
 
-    {%block js%}
+    </div> 
     
-    {%endblock%}
+
+</div>
+{% endblock %} {%block js%} {%endblock%}
