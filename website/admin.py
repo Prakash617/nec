@@ -1,5 +1,8 @@
 from django.contrib import admin
 from .models import *
+from django_summernote.admin import SummernoteModelAdmin
+
+
 # Register your models here.
 
 
@@ -13,4 +16,9 @@ from .models import *
 #     list_display = ('name',)
 #     search_fields = ('name',)
 
-admin.site.register([Course, Category, Sub_Category,Quiz,Question,Choice])
+class Sub_CategoryAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
+    summernote_fields = ('details',)
+
+admin.site.register(Sub_Category, Sub_CategoryAdmin)
+
+admin.site.register([Course, Category,Quiz,Question,Choice])
