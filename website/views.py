@@ -110,10 +110,10 @@ def populate_subcategories():
         '10.5 Engineering professional practice',
         '10.6 Engineering Regulatory Body',
     ]
-
+    course_name = Course.objects.get(name = "Nec")
 
     for category_name, subcategory_list in context.items():
-        category, created = Category.objects.get_or_create(name=category_name)
+        category, created = Category.objects.get_or_create(name=category_name, course=course_name)
 
         for subcategory_name in subcategory_list:
             subcategory, sub_created = Sub_Category.objects.get_or_create(
