@@ -82,14 +82,25 @@
 {% endblock %} {% block body %}
 <div class="row w-100 g-0">
     <div class="col-0 col-md-2  bg-body-tertiary overflow-y-auto sidebar_height" style="background-color: #d32a2a;">
-        {% comment %} sidebar {% endcomment %} {% include "sidebar.html" %}
+        {% include "sidebar.html" %}
 
     </div>
     <div class="col-0 col-md-10 container ">
-        {% block content %} {{ sub_category_details.details|safe }} {% endblock %}
+        <h4 class="text-center text-danger">{{ sub_category_details.more_sub}}</h4>
+        <hr> {% block content %} {{ sub_category_details.details|safe }} {% endblock %}
 
     </div>
 
 
 </div>
-{% endblock %} {%block js%} {%endblock%}
+{% endblock %} {%block js%}
+<script>
+    (function() {
+        'use strict'
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        tooltipTriggerList.forEach(function(tooltipTriggerEl) {
+            new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    })()
+</script>
+{%endblock%}
