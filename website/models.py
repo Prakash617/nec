@@ -20,7 +20,8 @@ class Sub_Category(models.Model):
     category = models.ForeignKey(Category, null=True, blank=True,on_delete=models.DO_NOTHING)
     name = models.CharField(max_length=100)
     more_sub = models.TextField(blank=True)
-    details = models.TextField(blank=True)
+    details = models.TextField(null=True, blank=True)
+    image_upload = models.ImageField(blank=True,upload_to = "images/")
 
     def __str__(self):
         return self.name
