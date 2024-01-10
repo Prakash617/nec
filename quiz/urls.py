@@ -4,6 +4,7 @@ from .views import *
 urlpatterns = [
     
     path('quiz_home', quiz_home, name="quiz_home"),
+    path('addQuestion/', addQuestion,name='addQuestion'),
     # path('results', quiz_results, name="quiz_results"),
     # path('slogin', superuser_login, name="slogin"),
     # path('superuser/logout', superuser_logout, name="superuser_logout"),

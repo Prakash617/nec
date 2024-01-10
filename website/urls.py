@@ -10,8 +10,8 @@ urlpatterns = [
     path('feed', feed, name="feed"),
     
     # path('nec', nec_page, name="nec_page"),
-    path('<str:course_name>/', course, name='course'),
-    path('<str:course_name>/<str:sub_category>/', course_detail, name='course_detail'),
+    path('course/<str:course_name>/', course, name='course'),
+    path('course/<str:course_name>/<str:sub_category>/', course_detail, name='course_detail'),
 
 
     

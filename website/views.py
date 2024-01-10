@@ -129,20 +129,8 @@ def populate_subcategories():
 def feed(request):
     template_path = 'index.html'
     context = {}
-    # print('heelo')
-    # context['1. Concept of Basic Electrical and Electronics Engineering'] = ['1.1 Basic concept',
-    #                                                                          '1.2 Network theorems',
-    #                                                                          '1.3 Alternating current fundamentals',
-    #                                                                          '1.4 Semiconductor devices',
-    #                                                                          '1.5 Signal generator',
-    #                                                                          '1.6 Amplifiers:',
-    #                                                                          ]
     
-    # # print(context.keys())
-    # category = Category.objects.get(name=list(context.keys())[0])
-    populate_subcategories()
-    # print(category.name)
-    
+    populate_subcategories()    
     return render(request, template_path, context)
 
     

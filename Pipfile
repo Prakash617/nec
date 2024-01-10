@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 pillow = "*"
-django-summernote = "*"
+django-summernote = "==0.8.20.0"
 
 [dev-packages]
 
