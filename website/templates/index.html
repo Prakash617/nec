@@ -1,15 +1,55 @@
 {% extends 'base.html' %} {%block css%} {% endblock %} {% block body %}
 
 <div class="container">
-    <div class="d-flex justify-content-center align-content-center h-50">
-        <!-- <a href="{{button_data.link}}" class="btn btn-native">
+    <!-- <a href="{{button_data.link}}" class="btn btn-native">
             {{button_data.name}} <i class="fa-solid fa-chevron-right ms-2"></i>
         </a> -->
-        <div>
-            <a href="course/Nec" class="btn btn-danger">nec</a>
+    {% comment %}
+    <div>
+        <a href="course/Nec" class="btn btn-danger">nec</a>
+    </div>
+    <div>
+        <a href="course/class_8" class="btn btn-primary">class 8</a>
+    </div> {% endcomment %}
+    <div class="row my-5 pt-3">
+        <div class="col-12 mt-5 col-md-6 col-lg-6">
+            <div class="bg-body-secondary w-100  w-md-75 p-1 rounded-start-pill rounded-end-pill">
+                <div class="d-inline-block bg-warning rounded-start-pill rounded-end-pill p-2">Navbar Name</div>
+                <p class="d-inline fw-bolder ">Making examination simple and easy </p>
+            </div>
+            <div class="my-5">
+                <h2 class="fs-1 fw-bolder">We Help To Upgrade Your Knowlegde Effectively</h2>
+                <p class="my-5">A complete solution for all kinds of examination used by academic examiners, competitive examiners, preparation centers and freelancer teachers to help their examinees</p>
+                <div class="d-flex gap-4">
+
+                    <a href="course/Nec" type="button" class="btn rounded-pill btn-outline-primary px-5">Nec</a>
+                    <a type="button" class="btn rounded-pill btn-primary px-5">Other class</a>
+                </div>
+
+
+
+            </div>
         </div>
-        <div>
-            <a href="course/class_8" class="btn btn-primary">class 8</a>
+        <div class="col-12 col-md-6 col-lg-6">
+            <img src="/media/images/hero image.webp" class="img-fluid" alt="hero image.webp" />
+
+        </div>
+    </div>
+
+</div>
+<div class="bg-body-tertiary d-flex justify-content-center ">
+
+    <div class="row container">
+        <div class="col-12  col-md-6 col-lg-6 mt-5 ">
+            <img src="/media/images/knowabout.webp" class="img-fluid" alt="knowabout.webp" />
+
+        </div>
+        <div class="col-12 col-md-6 col-lg-6 mt-5 ps-5">
+            <p class="fs-5 fw-bolder">Know About Us</p>
+            <h2 class="fs-1 fw-bolder">We manage online exams portal</h2>
+            <p>Every student has a fear of examination or has an ambition to do better in their examination. Examkosathi is the right platform for those who has to go through any kind of examination and test in their career. It assists to overcome the fear
+                of examination and helps one to score as per their wish in their examination. It provides examinees with the freedom of evaluating oneself at their own pace and will</p>
+
         </div>
     </div>
 </div>
