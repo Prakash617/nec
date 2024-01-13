@@ -1,4 +1,11 @@
-{% extends 'base.html' %} {%block css%} {% endblock %} {% block body %}
+{% extends 'base.html' %} {%block css%}
+<style>
+    ul {
+        text-decoration: none;
+    }
+</style>
+
+{% endblock %} {% block body %}
 
 <div class="container">
     <!-- <a href="{{button_data.link}}" class="btn btn-native">
@@ -22,8 +29,8 @@
                 <p class="my-5">A complete solution for all kinds of examination used by academic examiners, competitive examiners, preparation centers and freelancer teachers to help their examinees</p>
                 <div class="d-flex gap-4">
 
-                    <a href="course/Nec" type="button" class="btn rounded-pill btn-outline-primary px-5">Nec</a>
-                    <a type="button" class="btn rounded-pill btn-primary px-5">Other class</a>
+                    <a href="course/Nec" type="button" class="btn rounded-pill btn-outline-primary py-2 px-5">Nec</a>
+                    <a type="button" class="btn rounded-pill btn-primary  py-2 px-5">Other class</a>
                 </div>
 
 
@@ -44,11 +51,22 @@
             <img src="/media/images/knowabout.webp" class="img-fluid" alt="knowabout.webp" />
 
         </div>
-        <div class="col-12 col-md-6 col-lg-6 mt-5 ps-5">
+        <div class="col-12 col-md-6 col-lg-6 mt-5 ">
             <p class="fs-5 fw-bolder">Know About Us</p>
             <h2 class="fs-1 fw-bolder">We manage online exams portal</h2>
             <p>Every student has a fear of examination or has an ambition to do better in their examination. Examkosathi is the right platform for those who has to go through any kind of examination and test in their career. It assists to overcome the fear
                 of examination and helps one to score as per their wish in their examination. It provides examinees with the freedom of evaluating oneself at their own pace and will</p>
+
+            <ul class="text-decoration-none">
+                <li><i class="bi bi-cursor-fill" class="text-warning"></i>
+                    <span>School Level</span></li>
+                <li><i class="bi bi-cursor-fill"></i>
+                    <span>School Level</span></li>
+                <li> <i class="bi bi-cursor-fill"></i>
+                    <span>Preparation class</span</li>
+                <li> <i class="bi bi-cursor-fill"></i>
+                    <span>Preparation class</span</li>
+            </ul>
 
         </div>
     </div>
