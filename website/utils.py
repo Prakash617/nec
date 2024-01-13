@@ -14,5 +14,5 @@ def get_courses_category(course_name):
         # Add the category and its subcategories to the dictionary
         context[category.name] = subcategory_list
     # context['course_name'] = course_name
-    print('context: ---', context)
+    # print('context: ---', context)
     return context

@@ -5,6 +5,7 @@ from .models import *
 from django.http import HttpResponse
 from django.db import transaction
 from .models import QuesModel
+from website.models import *
 
 def populate_questions():
     # List of Nec MCQs (replace this with your own set of questions)
@@ -190,8 +191,7 @@ def populate_questions():
         'ans': 'option2'
     },
 ]
-
-
+    
     try:
         with transaction.atomic():
             for question_data in computer_engineering_questions:
@@ -205,8 +205,9 @@ def populate_questions():
 # Create your views here.
 def quiz_home(request):
     if request.method == 'POST':
-        print(request.POST)
-        questions=QuesModel.objects.all()
+        # print(request.POST)
+        # questions=QuesModel.objects.all()
+        questions=QuesModel.objects.order_by('?')[100]
         score=0
         wrong=0
         correct=0
@@ -238,10 +239,10 @@ def quiz_home(request):
             'questions':questions
         }
         return render(request,'Quiz/quiz_home.html',context)
- 
+
 def addQuestion(request):    
     template_path = 'Quiz/AddQuestion.html'
-    populate_questions()
+    # populate_questions()
     if request.user.is_staff:
         form=addQuestionform()
         if(request.method=='POST'):
@@ -253,3 +254,53 @@ def addQuestion(request):
         return render(request,template_path,context)
     else: 
         return redirect('home') 
+    
+def sub_title_quiz(request,sub_category=None):
+    template_path = 'Quiz/quiz_home.html'
+    
+    
+    if request.method == 'POST':
+        # print(request.POST)
+        # questions=QuesModel.objects.all()
+        # questions=QuesModel.objects.order_by('?')[100]
+        course_subtitle = Sub_Category.objects.filter(name=sub_category).first()
+        questions = QuesModel.objects.filter(course_subtitle = course_subtitle )[:100]
+        score=0
+        wrong=0
+        correct=0
+        total=0
+        for q in questions:
+            total+=1
+            print('request.POST.get(q.question)',request.POST.get(q.question))
+            print("q.ans",q.ans)
+            print("q.ans",request.POST.get(q.ans))
+            print()
+            if q.ans ==  request.POST.get(q.question):
+                score+=10
+                correct+=1
+            else:
+                wrong+=1
+        percent = score/(total*10) *100
+        context = {
+            'score':score,
+            'time': request.POST.get('timer'),
+            'correct':correct,
+            'wrong':wrong,
+            'percent':percent,
+            'total':total
+        }
+        return render(request,'Quiz/result.html',context)
+    else:
+        course_subtitle = Sub_Category.objects.filter(name=sub_category).first()
+        questions = QuesModel.objects.filter(course_subtitle = course_subtitle )[:100]
+
+        # questions=QuesModel.objects.all()
+        context = {
+            'questions':questions
+        }
+        return render(request,'Quiz/quiz_home.html',context)
+    
+    
+ 
+    
+    return render(request,template_path,context)

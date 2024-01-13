@@ -153,16 +153,16 @@ def superuser_login(request):
     if request.method == "POST":
         username = request.POST.get('email')
         password = request.POST.get('password')
-        print(username, password)
+        # print(username, password)
         user = authenticate(request, username=username, password=password)
-        print(user)
+        # print(user)
         if user.is_superuser | False:
             login(request, user)
             return redirect("superuser")
         
         else:
             return redirect("slogin")
-            print('failed to login')
+            # print('failed to login')
 
     return render(request, template_path, context)
 
@@ -185,7 +185,7 @@ def course(request,course_name):
         
         sub_category = Sub_Category.objects.filter(category__course__name=course_name).first()
         # sub_category = Sub_Category.objects.get(category__course__name=course_name).first()
-        print(sub_category.name)
+        # print(sub_category.name)
     except:
         print('subjected course not found')
 
@@ -199,6 +199,7 @@ def course_detail(request,course_name = None,sub_category=None):
     print('category',course_name,sub_category)
     # context = {}
     sub_category = Sub_Category.objects.get(name=sub_category)
+    print('sub_category',sub_category.name)
     # context['sub_category_detail'] = sub_category.details
     context = get_courses_category(course_name)
   

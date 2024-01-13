@@ -1,4 +1,5 @@
 from django.db import models
+from website.models import *
  
 # Create your models here.
 Quiz_CHOICES =[
@@ -10,6 +11,7 @@ Quiz_CHOICES =[
 
 class QuesModel(models.Model):
     course = models.CharField(default='Nec',blank=True,max_length=200, null=True)
+    course_subtitle = models.ForeignKey(Sub_Category,null=True, on_delete=models.SET_NULL)
     question = models.CharField(max_length=200,null=True)
     op1 = models.CharField(max_length=200,null=True)
     op2 = models.CharField(max_length=200,null=True)
