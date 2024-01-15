@@ -23,10 +23,10 @@
         font-size: 18px;
         border: none;
         outline: none;
-        background-color: red;
+        background-color: #7139F7;
         color: white;
         cursor: pointer;
-        padding: 15px;
+        padding: 10px;
         border-radius: 4px;
     }
     
@@ -35,21 +35,19 @@
     }
 </style>
 
-{% block css %}
-
-
- {% endblock %}
+{% block css %} {% endblock %}
 
 <body>
     <!-- navbar  -->
+
+    <button onclick="topFunction()" class='fs-4' id="myBtn" title="Go to top"><i class="bi bi-arrow-up-square-fill"></i></button>
     <div>
         {% include 'navbar.html' %}
     </div>
 
-    {% block body %} {% endblock %}
-    {% include 'footer.html' %}
+
+    {% block body %} {% endblock %} {% block footer %} {% include 'footer.html' %} {% endblock %}
 </body>
-<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 
 

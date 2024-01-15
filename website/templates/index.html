@@ -1,5 +1,16 @@
 {% extends 'base.html' %} {%block css%}
 <style>
+    .c_button {
+        /* background: ; */
+        border: 1px solid #7139F7;
+        color: #7139F7;
+        /* border-color: #7139F7; */
+    }
+    
+    .c_button:hover {
+        background-color: #7139F7;
+    }
+    
     .custom-list {
         list-style: none;
         padding: 0;
@@ -31,10 +42,10 @@
         </a> -->
     {% comment %}
     <div>
-        <a href="course/Nec" class="btn btn-danger">nec</a>
+        <a href="course/Nec" class="">nec</a>
     </div>
     <div>
-        <a href="course/class_8" class="btn btn-primary">class 8</a>
+        <a href="course/class_8" class=" ">class 8</a>
     </div> {% endcomment %}
     <div class="row my-5 pt-3">
         <div class="col-12  mt-5 col-md-6 col-lg-6">
@@ -51,8 +62,8 @@
                 <p class="my-5">A complete solution for all kinds of examination used by academic examiners, competitive examiners, preparation centers and freelancer teachers to help their examinees</p>
                 <div class="d-flex gap-4">
 
-                    <a href="course/Nec" type="button" class="btn rounded-pill btn-outline-primary py-2 px-5">Nec</a>
-                    <a type="button" class="btn rounded-pill btn-primary  py-2 px-5">Other class</a>
+                    <a href="course/Nec" type="button" class="btn c_button rounded-pill btn-outline-primary py-2 px-5">Nec</a>
+                    <a type="button" class="btn rounded-pill btn-primary  py-2 px-5" style="background-color: #7139F7;">Other class</a>
                 </div>
 
 
