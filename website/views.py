@@ -199,17 +199,15 @@ def user_signup(request):
         last_name = request.POST.get('last_name')
         username = request.POST['username']
         password = make_password(request.POST['password'])
-
-        # password = request.POST['password']
-        # password2 = request.POST['password2']
-        
-        # first_name = request.POST['first_name']
         print('first_name',first_name,last_name,username)
         # if password != password2:
             # print('password mismatch')
         # else:
         user = User(username=username,email=username,first_name=first_name,last_name=last_name,password=password ).save()
         print('User created')
+        
+        if user:
+            return redirect("home")
             
     #     username = request.POST.get('email')
     #     password = request.POST.get('password')
