@@ -2,9 +2,30 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from .models import *
 from .utils import *
-from django.contrib.auth import authenticate, login
-from django.contrib.auth import logout
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required,user_passes_test
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.contrib.auth.hashers import make_password
+
+
+
+
+from .forms import SignUpForm
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('admin_page')
+    else:
+        form = SignUpForm()
+    return render(request, 'signup.html', {'form': form})
 
 
 
@@ -147,6 +168,22 @@ def user_login(request):
     template_path = 'login&signup/login.html'
     # template_path = 'index.html'
     # context = {}
+    
+    if request.method == "POST":
+        print(request.POST)
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        print('user--------------------',user)
+        if user :
+            login(request, user)
+            return redirect("home")
+        
+        else:
+            return redirect("login")
+        
+        
+        # password = make_password(request.POST['password'])
 
     # return render(request, template_path, context)
     return render(request, template_path)
@@ -154,8 +191,36 @@ def user_signup(request):
     template_path = 'login&signup/signup.html'
     # template_path = 'index.html'
     # context = {}
+    # spass =  User.objects.get(email='prakashthapa617@gmail.com')
+    # print(spass.password)
+    if request.method == "POST":
+        print(request.POST)
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        username = request.POST['username']
+        password = make_password(request.POST['password'])
 
-    # return render(request, template_path, context)
+        # password = request.POST['password']
+        # password2 = request.POST['password2']
+        
+        # first_name = request.POST['first_name']
+        print('first_name',first_name,last_name,username)
+        # if password != password2:
+            # print('password mismatch')
+        # else:
+        user = User(username=username,email=username,first_name=first_name,last_name=last_name,password=password ).save()
+        print('User created')
+            
+    #     username = request.POST.get('email')
+    #     password = request.POST.get('password')
+    #     # print(username, password)
+    #     user = authenticate(request, username=username, password=password)
+    #     # print(user)
+    #     if user.is_superuser | False:
+    #         login(request, user)
+    #         return redirect("superuser")
+
+    # # return render(request, template_path, context)
     return render(request, template_path)
 
 def superuser_login(request):
@@ -170,6 +235,7 @@ def superuser_login(request):
         password = request.POST.get('password')
         # print(username, password)
         user = authenticate(request, username=username, password=password)
+        print('user_name hello-----',user)
         # print(user)
         if user.is_superuser | False:
             login(request, user)
@@ -183,7 +249,7 @@ def superuser_login(request):
 
 def superuser_logout(request):
     logout(request)
-    return redirect("slogin")
+    return redirect("home")
 
 
 
