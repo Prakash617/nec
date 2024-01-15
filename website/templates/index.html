@@ -1,7 +1,26 @@
 {% extends 'base.html' %} {%block css%}
 <style>
-    ul {
-        text-decoration: none;
+    .custom-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .icon-item {
+        padding-left: 15px;
+        /* Adjust the padding as needed */
+        background-image: url('/media/images/icon.svg');
+        /* Replace with the path to your custom icon */
+        background-repeat: no-repeat;
+        background-position: left center;
+        /* You can adjust this to position the icon */
+    }
+    /* For better visual appeal, you might want to add some spacing between the icon and the text */
+    
+    .icon-item::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        /* Adjust the width as needed */
     }
 </style>
 
@@ -19,10 +38,14 @@
         <a href="course/class_8" class="btn btn-primary">class 8</a>
     </div> {% endcomment %}
     <div class="row my-5 pt-3">
-        <div class="col-12 mt-5 col-md-6 col-lg-6">
-            <div class="bg-body-secondary w-100  w-md-75 p-1 rounded-start-pill rounded-end-pill">
+        <div class="col-12  mt-5 col-md-6 col-lg-6">
+            <div class="d-flex bg-body-secondary w-100 w-md-75 p-1 rounded-start-pill rounded-end-pill">
                 <div class="d-inline-block bg-warning rounded-start-pill rounded-end-pill p-2">Navbar Name</div>
-                <p class="d-inline fw-bolder ">Making examination simple and easy </p>
+                <div class="d-flex ms-3 my-auto justify-content-center align-items-center">
+                    <div>
+                        <p class="d-inline-block p-0 m-auto fw-bolder text-center ">Making examination simple and easy </p>
+                    </div>
+                </div>
             </div>
             <div class="my-5">
                 <h2 class="fs-1 fw-bolder">We Help To Upgrade Your Knowlegde Effectively</h2>
@@ -37,7 +60,7 @@
 
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-6">
+        <div class="col-12  col-md-6 col-lg-6">
             <img src="/media/images/hero image.webp" class="img-fluid" alt="hero image.webp" />
 
         </div>
@@ -46,28 +69,22 @@
 </div>
 <div class="bg-body-tertiary d-flex justify-content-center ">
 
-    <div class="row container">
-        <div class="col-12  col-md-6 col-lg-6 mt-5 ">
+    <div class="row d-flex  flex-sm-row flex-column-reverse container">
+        <div class="col-12 col-md-6 col-lg-6 mt-5 ">
             <img src="/media/images/knowabout.webp" class="img-fluid" alt="knowabout.webp" />
 
         </div>
-        <div class="col-12 col-md-6 col-lg-6 mt-5 ">
+        <div class="col-12 p-5   col-md-6 col-lg-6 mt-5 ">
             <p class="fs-5 fw-bolder">Know About Us</p>
             <h2 class="fs-1 fw-bolder">We manage online exams portal</h2>
             <p>Every student has a fear of examination or has an ambition to do better in their examination. Examkosathi is the right platform for those who has to go through any kind of examination and test in their career. It assists to overcome the fear
                 of examination and helps one to score as per their wish in their examination. It provides examinees with the freedom of evaluating oneself at their own pace and will</p>
-
-            <ul class="text-decoration-none">
-                <li><i class="bi bi-cursor-fill" class="text-warning"></i>
-                    <span>School Level</span></li>
-                <li><i class="bi bi-cursor-fill"></i>
-                    <span>School Level</span></li>
-                <li> <i class="bi bi-cursor-fill"></i>
-                    <span>Preparation class</span</li>
-                <li> <i class="bi bi-cursor-fill"></i>
-                    <span>Preparation class</span</li>
+            <ul class="custom-list text-decoration-none">
+                <li class="icon-item">School Level</li>
+                <li class="icon-item">Preparation class</li>
+                <li class="icon-item">Language class</li>
+                <li class="icon-item">Diploma Level CTEVT</li>
             </ul>
-
         </div>
     </div>
 </div>

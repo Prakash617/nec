@@ -1,7 +1,11 @@
+{% load static %}
+
 <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="background-color:#7436FF"> -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="/">Navbar</a>
+        <a class="navbar-brand " href="/"><img src="{% static 'img/favicon.png' %}" class="rounded-2" style="height: 30px; width:70px; background: #f5ebeb;" alt="My image"></a>
+
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,7 +24,8 @@
                     <a class="nav-link" href="#">Pricing</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Login/Signup</a>
+                    <!-- <a class="nav-link disabled" href="/login" aria-disabled="true">Login/Signup</a> -->
+                    <a class="nav-link " href="/login">Login/Signup</a>
                 </li>
             </ul>
         </div>

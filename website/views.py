@@ -143,6 +143,21 @@ def superuser(request):
     # return render(request, template_path, context)
     return render(request, template_path)
 
+def user_login(request):
+    template_path = 'login&signup/login.html'
+    # template_path = 'index.html'
+    # context = {}
+
+    # return render(request, template_path, context)
+    return render(request, template_path)
+def user_signup(request):
+    template_path = 'login&signup/signup.html'
+    # template_path = 'index.html'
+    # context = {}
+
+    # return render(request, template_path, context)
+    return render(request, template_path)
+
 def superuser_login(request):
     template_path = 'superuser/superuser_login.html'
     context = {}

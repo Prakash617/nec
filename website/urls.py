@@ -6,6 +6,8 @@ urlpatterns = [
     path('', home, name="admin_page"),
     path('superuser', superuser, name="superuser"),
     path('slogin', superuser_login, name="slogin"),
+    path('login',user_login, name="login"),
+    path('signup',user_signup, name="signup"),
     path('superuser/logout', superuser_logout, name="superuser_logout"),
     path('feed', feed, name="feed"),
     
