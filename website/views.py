@@ -163,29 +163,28 @@ def superuser(request):
 
     # return render(request, template_path, context)
     return render(request, template_path)
+from django.contrib import messages
 
 def user_login(request):
     template_path = 'login&signup/login.html'
-    # template_path = 'index.html'
-    # context = {}
     
     if request.method == "POST":
-        print(request.POST)
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         print('user--------------------',user)
-        if user :
+        if user is not None:
+            print('user--------------------enter')
             login(request, user)
-            return redirect("home")
+            messages.success(request, 'Login successful.')
+            return redirect('home')
+        
         
         else:
-            return redirect("login")
+            
+            messages.error(request, 'Invalid login credentials.')
         
         
-        # password = make_password(request.POST['password'])
-
-    # return render(request, template_path, context)
     return render(request, template_path)
 def user_signup(request):
     template_path = 'login&signup/signup.html'
@@ -198,6 +197,10 @@ def user_signup(request):
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         username = request.POST['username']
+        user_exist = User.objects.filter(username=username).exists()
+        if user_exist:
+            return render(request, template_path, context)
+        print('user_exist',user_exist)
         password = make_password(request.POST['password'])
         print('first_name',first_name,last_name,username)
         # if password != password2:
