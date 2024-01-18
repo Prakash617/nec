@@ -70,28 +70,30 @@
     .sidebar_height {
         display: inline-block;
         height: auto;
+        position: static !important;
     }
     
     @media only screen and (min-width: 768px) {
         .sidebar_height {
             height: 100vh;
+            position: sticky !important;
+            top: 0;
         }
     }
 </style>
 
 {% endblock %} {% block body %}
-<div class="row w-100 g-0">
-    <div class="col-0 col-md-2  bg-body-tertiary overflow-y-auto sidebar_height sticky-sm-top" style="background-color: #d32a2a; height:100vh;">
+<div class="row g-0" style="margin: 0;">
+    <div class="col-0 col-md-2  bg-body-tertiary overflow-y-auto sidebar_height  " style="background-color: #d32a2a; ">
         {% include "sidebar.html" %}
 
     </div>
     <div class="col-0 col-md-10 container ">
         <h2 class="text-center mb-4 ">{{ sub_category_details.name }}</h2>
         <h4 class="text-center text-danger">{{ sub_category_details.more_sub}}</h4>
-        <a href={% url 'sub_title_quiz' sub_category_details.name %}  class="btn btn-warning" data-mdb-ripple-init>Try quiz</a>
+        <a href={% url 'sub_title_quiz' sub_category_details.name %} class="btn btn-warning" data-mdb-ripple-init>Try quiz</a>
 
-        <hr> 
-         {{ sub_category_details.details|safe }}
+        <hr> {{ sub_category_details.details|safe }}
     </div>
 
 

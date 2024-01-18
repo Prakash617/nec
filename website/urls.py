@@ -13,7 +13,7 @@ urlpatterns = [
     path('superuser/logout', superuser_logout, name="superuser_logout"),
     path('feed', feed, name="feed"),
     
-    # path('nec', nec_page, name="nec_page"),
+    path('courses', courses, name="courses"),
     path('course/<str:course_name>/', course, name='course'),
     path('course/<str:course_name>/<str:sub_category>/', course_detail, name='course_detail'),
 

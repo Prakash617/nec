@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <span class="nav-link disabled" aria-disabled="true">{% if request.user.is_authenticated %}Welcome {{ request.user.first_name |title }} {% endif %}</span>
+                    <span class="nav-link disabled text-warning" aria-disabled="true">{% if request.user.is_authenticated %}Welcome {{ request.user.first_name |title }} {% endif %}</span>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>

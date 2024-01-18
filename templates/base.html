@@ -50,21 +50,24 @@
 {% block css %} {% endblock %}
 
 <body class="position-relative">
-    <!-- navbar  -->
+    {% if messages %}
 
-
-    <button onclick="topFunction()" class='fs-4 ' id="myBtn" title="Go to top"><i class="bi bi-arrow-up-square-fill"></i></button>
-    <div>
-        {% include 'navbar.html' %}
-    </div>
-
-    <div role="alert " class="position-absolute position-fixed zindex-modal top-0 end-0 mt-5 me-5">
+    <div role="alert " class="position-absolute position-fixed z-3 top-0 end-0 mt-5 me-2">
         {% for message in messages %}
         <div id='tos' class="alert  {% if  message.tags %}{{ message.tags }}{% endif %}">
             {{ message }}
         </div>
         {% endfor %}
     </div>
+    {% endif %}
+    
+    {% comment %} <!-- navbar  --> {% endcomment %}
+    <button onclick="topFunction()" class='fs-4 ' id="myBtn" title="Go to top"><i class="bi bi-arrow-up-square-fill"></i></button>
+    <div>
+        {% include 'navbar.html' %}
+    </div>
+
+    
 
 
     {% block body %} {% endblock %} {% block footer %} {% include 'footer.html' %} {% endblock %}

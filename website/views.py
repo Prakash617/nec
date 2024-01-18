@@ -188,41 +188,48 @@ def user_login(request):
     return render(request, template_path)
 def user_signup(request):
     template_path = 'login&signup/signup.html'
-    # template_path = 'index.html'
-    # context = {}
-    # spass =  User.objects.get(email='prakashthapa617@gmail.com')
-    # print(spass.password)
+    context = {
+        "first_name":'',
+        "last_name":'',
+        "username":'',
+        "password":'',
+        "password2":'',
+        
+    }
+    
     if request.method == "POST":
         print(request.POST)
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         username = request.POST['username']
+        password = request.POST['password']
+        password2 = request.POST['password2']
+        
+        context['first_name']= first_name
+        context["last_name"]= last_name
+        context["username"]= username
+        context["password"]= password
+        context["password2"]= password2
+        if request.POST['password'] != password2:
+            messages.error(request, 'password mismatch')
+            return render(request, template_path, context)
+                
         user_exist = User.objects.filter(username=username).exists()
         if user_exist:
-            return render(request, template_path, context)
-        print('user_exist',user_exist)
-        password = make_password(request.POST['password'])
-        print('first_name',first_name,last_name,username)
-        # if password != password2:
-            # print('password mismatch')
-        # else:
-        user = User(username=username,email=username,first_name=first_name,last_name=last_name,password=password ).save()
-        print('User created')
-        
-        if user:
-            return redirect("home")
-            
-    #     username = request.POST.get('email')
-    #     password = request.POST.get('password')
-    #     # print(username, password)
-    #     user = authenticate(request, username=username, password=password)
-    #     # print(user)
-    #     if user.is_superuser | False:
-    #         login(request, user)
-    #         return redirect("superuser")
+            messages.error(request, 'user already exitst ')
 
-    # # return render(request, template_path, context)
-    return render(request, template_path)
+            print('user_exist',user_exist)
+            return render(request, template_path, context)
+        
+        
+        else:
+            user = User(username=username,email=username,first_name=first_name,last_name=last_name,password=make_password(request.POST['password']) ).save()
+            messages.success(request, 'User created successfully.')
+            return redirect('home')
+        
+            # print('User created')
+            
+    return render(request, template_path,context)
 
 def superuser_login(request):
     template_path = 'superuser/superuser_login.html'
@@ -253,6 +260,12 @@ def superuser_logout(request):
     return redirect("home")
 
 
+
+def courses(request):
+    template_path = 'courses.html'
+    context = {}
+    
+    return render(request, template_path, context)
 
 def course(request,course_name):
     template_path = 'course_details.html'
