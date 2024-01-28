@@ -38,11 +38,11 @@
         background-color: #7139F7;
         color: white;
         cursor: pointer;
-        padding: 10px;
+        padding: -10px;
         border-radius: 4px;
     }
     
-    #myBtn:hover {
+    #myBtn:active {
         background-color: #555;
     }
 </style>
@@ -59,15 +59,14 @@
         </div>
         {% endfor %}
     </div>
-    {% endif %}
-    
-    {% comment %} <!-- navbar  --> {% endcomment %}
+    {% endif %} {% comment %}
+    <!-- navbar  -->{% endcomment %}
     <button onclick="topFunction()" class='fs-4 ' id="myBtn" title="Go to top"><i class="bi bi-arrow-up-square-fill"></i></button>
     <div>
         {% include 'navbar.html' %}
     </div>
 
-    
+
 
 
     {% block body %} {% endblock %} {% block footer %} {% include 'footer.html' %} {% endblock %}

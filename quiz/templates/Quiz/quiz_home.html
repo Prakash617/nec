@@ -67,7 +67,7 @@
     <br />
     <div class="d-flex justify-content-center">
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" id='quizForm' class="btn btn-primary">Submit</button>
     </div>
   </form>
   {% block script %}
@@ -76,13 +76,26 @@
     const timer = document.getElementById("displaytimer");
     console.log(timer.textContent);
     const inputtag = document.getElementById("timer");
+    const quizForm = document.getElementById("quizForm"); // Add this line
 
-    t = 0;
-    setInterval(() => {
-      t += 1;
-      timer.innerHTML = "<b>Timer: " + t + " seconds</b>";
-      inputtag.value = t;
-    }, 1000);
+
+    {% comment %} let t = 2; {% endcomment %}
+    let t = 7200;
+    const timerInterval = setInterval(() => {
+        const hours = Math.floor(t / 3600);
+        const minutes = Math.floor((t % 3600) / 60);
+        const seconds = t % 60;
+
+        timer.innerHTML = "<b>Timer: " + hours + "hr " + minutes + "min " + seconds + "sec</b>";
+        inputtag.value = t;
+
+        if (t <= 0) {
+          quizForm.click(); // Submit the form when the timer reaches 0
+          clearInterval(timerInterval); // Stop the timer if it goes below or equal to 0
+        } else {
+          t -= 1;
+        }
+      }, 1000);
   </script>
   {% endblock script %}
 </div>

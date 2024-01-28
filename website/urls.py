@@ -13,7 +13,9 @@ urlpatterns = [
     path('superuser/logout', superuser_logout, name="superuser_logout"),
     path('feed', feed, name="feed"),
     
-    path('courses', courses, name="courses"),
+    path('courses', courses_list.as_view(), name="courses_list"),
+    # path('courses_list', , name="courses_list"),
+    
     path('course/<str:course_name>/', course, name='course'),
     path('course/<str:course_name>/<str:sub_category>/', course_detail, name='course_detail'),
 

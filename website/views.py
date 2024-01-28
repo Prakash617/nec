@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required,user_passes_test
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
+from django.views import View
 
 
 
@@ -261,11 +262,11 @@ def superuser_logout(request):
 
 
 
-def courses(request):
-    template_path = 'courses.html'
-    context = {}
+# def courses(request):
+#     template_path = 'courses.html'
+#     context = {}
     
-    return render(request, template_path, context)
+#     return render(request, template_path, context)
 
 def course(request,course_name):
     template_path = 'course_details.html'
@@ -297,6 +298,17 @@ def course_detail(request,course_name = None,sub_category=None):
     print('sub_category',sub_category.name)
     # context['sub_category_detail'] = sub_category.details
     context = get_courses_category(course_name)
-  
     
     return render(request, template_path, {"context": context,"sub_category_details":sub_category,"course_name": course_name})
+
+
+class courses_list(View):
+    template_name = 'courses_list.html'
+
+    def get(self, request, *args, **kwargs):
+        # Your logic goes here if needed
+        context = {}
+        courses = Course.objects.all()
+        print('course',course)
+        context['courses'] = courses
+        return render(request, self.template_name, context)

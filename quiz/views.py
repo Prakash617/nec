@@ -205,7 +205,8 @@ def populate_questions():
 # Create your views here.
 def quiz_home(request):
     if request.method == 'POST':
-        # print(request.POST)
+        
+        print(request.POST)
         # questions=QuesModel.objects.all()
         questions=QuesModel.objects.order_by('?')[100]
         score=0
