@@ -3,7 +3,7 @@ from .models import *
 def get_courses_category(course_name):
     context = {}
     # Query all categories and their related sub-categories
-    categories = Category.objects.filter(course__name=course_name)
+    categories = Category.objects.filter(subject__name=course_name)
     
     sub_categories = Sub_Category.objects.all()
     # Loop through each category and retrieve its related sub-categories

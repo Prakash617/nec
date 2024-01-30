@@ -272,11 +272,11 @@ def sub_title_quiz(request,sub_category=None):
         total=0
         for q in questions:
             total+=1
-            print('request.POST.get(q.question)',request.POST.get(q.question))
-            print("q.ans",q.ans)
-            print("q.ans",request.POST.get(q.ans))
-            print()
-            if q.ans ==  request.POST.get(q.question):
+            # print('request.POST.get(q.question)',request.POST.get(q.question))
+            # print("q.ans",q.ans)
+            # print("q.ans",request.POST.get(q.ans))
+            # print()
+            if q.ans == request.POST.get(q.question):
                 score+=10
                 correct+=1
             else:

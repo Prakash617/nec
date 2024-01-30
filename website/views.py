@@ -271,7 +271,7 @@ def superuser_logout(request):
 def course(request,course_name):
     template_path = 'course_details.html'
     # context = {}
-    print('coursename', course_name,type(course_name))
+    # print('coursename', course_name,type(course_name))
     
     # --------# side bar-----
     context = get_courses_category(course_name)
@@ -279,7 +279,7 @@ def course(request,course_name):
     
     try:
         
-        sub_category = Sub_Category.objects.filter(category__course__name=course_name).first()
+        sub_category = Sub_Category.objects.filter(category__subject__name=course_name).first()
         # sub_category = Sub_Category.objects.get(category__course__name=course_name).first()
         # print(sub_category.name)
     except:
@@ -311,4 +311,25 @@ class courses_list(View):
         courses = Course.objects.all()
         print('course',course)
         context['courses'] = courses
+        return render(request, self.template_name, context)
+    
+class subjects(View):
+    template_name = 'subjects.html'
+
+    def get(self, request, *args, **kwargs):
+        # Your logic goes here if needed
+        print('kwargs', kwargs)
+        context = {}
+        course__name = kwargs['subject_name']
+        print('course_name',type(course__name))
+        # courses = Category.objects.all()
+        subjects = Subject.objects.filter(course__name = course__name)
+        # for s in subjects:
+        #     print(s)
+        # for  c in courses:
+        #     c.subject = computer
+        #     print('sucjectst',c.subject)
+        #     c.save()
+        # print('course',course)
+        context['subjects'] = subjects
         return render(request, self.template_name, context)

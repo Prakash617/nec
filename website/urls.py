@@ -14,6 +14,7 @@ urlpatterns = [
     path('feed', feed, name="feed"),
     
     path('courses', courses_list.as_view(), name="courses_list"),
+    path('subjects/<str:subject_name>', subjects.as_view(), name="subjects"),
     # path('courses_list', , name="courses_list"),
     
     path('course/<str:course_name>/', course, name='course'),

@@ -8,8 +8,15 @@ class Course(models.Model):
     def __str__(self):
         return self.name
     
-class Category(models.Model):
+class Subject(models.Model):
     course = models.ForeignKey(Course, null=True, blank=True,on_delete=models.DO_NOTHING)
+    name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.name
+    
+class Category(models.Model):
+    subject = models.ForeignKey(Subject, null=True, blank=True,on_delete=models.DO_NOTHING)
     name = models.CharField(max_length=100)
     
 

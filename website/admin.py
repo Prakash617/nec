@@ -21,4 +21,4 @@ class Sub_CategoryAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
 
 admin.site.register(Sub_Category, Sub_CategoryAdmin)
 
-admin.site.register([Course, Category,Quiz,Question,Choice])
+admin.site.register([Course, Category,Quiz,Question,Choice,Subject])
