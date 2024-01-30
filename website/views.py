@@ -320,16 +320,16 @@ class subjects(View):
         # Your logic goes here if needed
         print('kwargs', kwargs)
         context = {}
-        course__name = kwargs['subject_name']
-        print('course_name',type(course__name))
-        # courses = Category.objects.all()
-        subjects = Subject.objects.filter(course__name = course__name)
+        # course__name = kwargs['subject_name']
+        # print('course_name',type(course__name))
+        courses = Category.objects.all()
+        # subjects = Subject.objects.filter(course__name = course__name)
         # for s in subjects:
         #     print(s)
-        # for  c in courses:
-        #     c.subject = computer
-        #     print('sucjectst',c.subject)
-        #     c.save()
+        for  c in courses:
+            c.subject = computer
+            print('sucjectst',c.subject)
+            c.save()
         # print('course',course)
         context['subjects'] = subjects
         return render(request, self.template_name, context)
