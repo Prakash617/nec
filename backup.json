@@ -1,0 +1,407 @@
+[{
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$ajkrSuFQSruqP52QV3HyBY$Tm8R4ucEoILIQMvmoDdQQL7llhU05XwTKtbM8uw/uGc=",
+            "last_login": "2024-01-31T14:21:22.012Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2023-12-21T16:12:30.733Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$iP6VcXG2NrFk0ZpGrksIxK$dMVGPXhtGNqHCe366uX33f6/bhOy0905VAb1E52p068=",
+            "last_login": "2024-01-15T13:51:51.246Z",
+            "is_superuser": false,
+            "username": "kkkk@gmail.com",
+            "first_name": "kkkk@gmail.com",
+            "last_name": "kkkk@gmail.com",
+            "email": "kkkk@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-01-15T13:51:50.802Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "password": "admin",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "admin@admin.com",
+            "first_name": "first_name",
+            "last_name": "last_name",
+            "email": "admin@admin.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-01-15T14:36:40.623Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+            "password": "admin",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "prakashthapa617@gmail.com",
+            "first_name": "prakash",
+            "last_name": "thapa",
+            "email": "prakashthapa617@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-01-15T15:14:59.801Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 5,
+        "fields": {
+            "password": "admin",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "admin@gmail.com",
+            "first_name": "first_nameds",
+            "last_name": "last_name",
+            "email": "admin@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-01-15T15:16:45.143Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 6,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$IBPIV9feeEjQL8ciJOLaKE$bUlx45NuiYayH6FjDaPccpkS4uUMkSlcpvFAs6qhrA4=",
+            "last_login": "2024-01-28T14:06:09.139Z",
+            "is_superuser": false,
+            "username": "admins@admin.com",
+            "first_name": "prakash",
+            "last_name": "last_name",
+            "email": "admins@admin.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-01-15T15:19:13Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 7,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$0yIu28IefrjdxZF0Trsysb$8ESvUI5bs26hXnF4Zn4z6N8pMzjcZK83Iy/JkOdkGKM=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "",
+            "first_name": "first_name",
+            "last_name": "last_name",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-01-15T16:47:12.501Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 8,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$lFpmjWtj6BRFEOIkKO1vzG$Yncjb1VQp8BoD2eZ+2ep5G8uQxPF+K4ot4NqZtjU6u4=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "adddmins@admin.com",
+            "first_name": "dfsd",
+            "last_name": " dfasdf ",
+            "email": "adddmins@admin.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-01-18T04:33:16.700Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {
+            "app_label": "auth",
+            "model": "user"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "website",
+            "model": "sub_category"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {
+            "app_label": "website",
+            "model": "quiz"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "website",
+            "model": "category"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {
+            "app_label": "website",
+            "model": "choice"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 11,
+        "fields": {
+            "app_label": "website",
+            "model": "course"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 12,
+        "fields": {
+            "app_label": "website",
+            "model": "question"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 13,
+        "fields": {
+            "app_label": "django_summernote",
+            "model": "attachment"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 14,
+        "fields": {
+            "app_label": "quiz",
+            "model": "quesmodel"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 15,
+        "fields": {
+            "app_label": "website",
+            "model": "subject"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "2x0v3u6b4bafi882po94ha89b6q5q1w7",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2pCxUBhcuu8ZCDMMUjVtUtqV8e7apAvd_vfef6mYtrXGrckSx6wu6qxOvxslfsi0g3xP023WPE_rMpLeFX3Qpoc5y_N6uH8HNbX6rQMxWodSfIAExnXZQCcEjNBzyD4n7MGgLwROLBc0ngQtIXprimH1_gDa1je4:1rUqkp:2DvCmiBwbHTjhanYYibzshwG323MFXgscR8QDFm2C5Y",
+            "expire_date": "2024-02-13T16:14:31.444Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "4lzo16u2c4hszcdxs9ryonj2q7cmixlq",
+        "fields": {
+            "session_data": ".eJxVjM0OwiAQhN-FsyHyYxc8eu8zkF1YpGogKe3J-O62SQ-azGm-b-YtAq5LCWvnOUxJXIUSp9-OMD657iA9sN6bjK0u80RyV-RBuxxb4tftcP8OCvayreNZD85qgkRM2Vlvt7Bl0M5fYLBg2WmtjKMIEXRCIm8MKGWQc_ZZfL7LuDeP:1rJF8H:aHvvfrltQcv9g3dNRb8sXhVJp42-zG2X2IzisUEuItM",
+            "expire_date": "2024-01-12T15:50:45.873Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "5rew05h3ker869v6lyxtg3zdnc3lziu5",
+        "fields": {
+            "session_data": ".eJxVjMsOwiAUBf-FtSGFXqC4dO83NPcBUjU0Ke3K-O_apAvdnpk5LzXitpZxa2kZJ1FnZdTpdyPkR6o7kDvW26x5rusykd4VfdCmr7Ok5-Vw_w4KtvKtY0yBPMsAAoCA1lpO4BMQswOJXZ9tEDPEPpscsHPUU_SMxgG4Lnv1_gDtdjfV:1rGM2c:HUooSZDjU3pc-n7TE4Uc3Ik9IK4riiU-rvhnQV5RDKI",
+            "expire_date": "2024-01-04T16:36:58.104Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "6jc9c6u08ncwou5u52tq60r595y670jw",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hCgHSgu3XsGMjAztmpKUtqV8e7apAvd_vfef6mE2zqmrfGSJlJn5dXpd8tYHjzvgO4436oudV6XKetd0Qdt-lqJn5fD_TsYsY3f2sQORQz07PqMvutdCNEFCF4EC4D1nqRDjGDZEg0GB7ZsxIkXgiDq_QHZRTgS:1rQACz:ioQRUVbLRl4hZGouXTShZAj8EEAJQnkaFKp6Wq3s170",
+            "expire_date": "2024-01-31T18:00:13.959Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "7vt9ca5ryck9gfsqzcj6ihpeox4ls78u",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2pCxUBhcuu8ZCDMMUjVtUtqV8e7apAvd_vfef6mYtrXGrckSx6wu6qxOvxslfsi0g3xP023WPE_rMpLeFX3Qpoc5y_N6uH8HNbX6rQMxWodSfIAExnXZQCcEjNBzyD4n7MGgLwROLBc0ngQtIXprimH1_gDa1je4:1rMKH0:xQWh6Gb8TR4Z2WrxZrTQZz47oZfCJVvZL8nyIvfkI6E",
+            "expire_date": "2024-01-21T03:56:30.084Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "9nzi4ki6nfs0u668dwcwl0m7qdntivt9",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2pCxUBhcuu8ZCDMMUjVtUtqV8e7apAvd_vfef6mYtrXGrckSx6wu6qxOvxslfsi0g3xP023WPE_rMpLeFX3Qpoc5y_N6uH8HNbX6rQMxWodSfIAExnXZQCcEjNBzyD4n7MGgLwROLBc0ngQtIXprimH1_gDa1je4:1rM80N:FRASufmkoFFuj5AGpgZPy16Qnfet_Ck_ls5pa4QVOzI",
+            "expire_date": "2024-01-20T14:50:31.335Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "awf09odi4pak3956vlpe7o7eyjwbyxvf",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hCgHSgu3XsGMjAztmpKUtqV8e7apAvd_vfef6mE2zqmrfGSJlJn5dXpd8tYHjzvgO4436oudV6XKetd0Qdt-lqJn5fD_TsYsY3f2sQORQz07PqMvutdCNEFCF4EC4D1nqRDjGDZEg0GB7ZsxIkXgiDq_QHZRTgS:1rQAD0:YB0FqEGSs_BJXi16EkYbkrMVtijZkoC8E9Tt3Bxepvk",
+            "expire_date": "2024-01-31T18:00:14.146Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "e2x1rrr8jjconwf0d0cf1pivomac86t8",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hCgHSgu3XsGMjAztmpKUtqV8e7apAvd_vfef6mE2zqmrfGSJlJn5dXpd8tYHjzvgO4436oudV6XKetd0Qdt-lqJn5fD_TsYsY3f2sQORQz07PqMvutdCNEFCF4EC4D1nqRDjGDZEg0GB7ZsxIkXgiDq_QHZRTgS:1rQ9dO:ntO1N9n8bVYIHIeHdtoCKNHHRbQ3-B4S0jbT2CDgfzY",
+            "expire_date": "2024-01-31T17:23:26.319Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "kqgw11yon6t1fhc9thel2mfn69r6ejqi",
+        "fields": {
+            "session_data": "e30:1rGLlV:QwGV9zzIEiZt8AEDPpK9WgwooO0b_umwQ3kUwTbSBx4",
+            "expire_date": "2024-01-04T16:19:17.597Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "l8unlf92duvec4214woksgyrl4sgi6ke",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hCgHSgu3XsGMjAztmpKUtqV8e7apAvd_vfef6mE2zqmrfGSJlJn5dXpd8tYHjzvgO4436oudV6XKetd0Qdt-lqJn5fD_TsYsY3f2sQORQz07PqMvutdCNEFCF4EC4D1nqRDjGDZEg0GB7ZsxIkXgiDq_QHZRTgS:1rQACz:ioQRUVbLRl4hZGouXTShZAj8EEAJQnkaFKp6Wq3s170",
+            "expire_date": "2024-01-31T18:00:13.838Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "pv7s7t4iaiwqc6wyyu372lnxz6fpzocs",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hAGOhnq0r1nIAMMUjU0Ke3KeHdt0oVu_3vvv1Tgba1h67KEKauzAnX63SKnh7Qd5Du326zT3NZlinpX9EG7vs5ZnpfD_Tuo3Ou3Nh6MdeQ5ic3gOFJ0o3GFMJviGIkIhXwCRjNi5MGjAxCxlCKVwaj3B8WsNzU:1rM6Z5:jNFoT-NyTz0ZYSScBAG3Grwn_OU0_wy1caJZmeTn2GE",
+            "expire_date": "2024-01-20T13:18:15.359Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "scwkspm2mheygs8oavoykhh9bae8k150",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2pCxUBhcuu8ZCDMMUjVtUtqV8e7apAvd_vfef6mYtrXGrckSx6wu6qxOvxslfsi0g3xP023WPE_rMpLeFX3Qpoc5y_N6uH8HNbX6rQMxWodSfIAExnXZQCcEjNBzyD4n7MGgLwROLBc0ngQtIXprimH1_gDa1je4:1rMAQh:x5G9kffrl0NKDQfY93BftGv0ik79_QIU46RsgggoAd8",
+            "expire_date": "2024-01-20T17:25:51.629Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "vps52cm6xzdl2umwk4sk8x9ammvhg7fm",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2pCxUBhcuu8ZCDMMUjVtUtqV8e7apAvd_vfef6mYtrXGrckSx6wu6qxOvxslfsi0g3xP023WPE_rMpLeFX3Qpoc5y_N6uH8HNbX6rQMxWodSfIAExnXZQCcEjNBzyD4n7MGgLwROLBc0ngQtIXprimH1_gDa1je4:1rVBSs:FDbz7NV2Qr-MwwUSrX86woFakBQ6MucRE3BZxQ-qrQg",
+            "expire_date": "2024-02-14T14:21:22.024Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "w8izg1a5hbge56lrvsovf7mksk8lk0jm",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hCgHSgu3XsGMjAztmpKUtqV8e7apAvd_vfef6mE2zqmrfGSJlJn5dXpd8tYHjzvgO4436oudV6XKetd0Qdt-lqJn5fD_TsYsY3f2sQORQz07PqMvutdCNEFCF4EC4D1nqRDjGDZEg0GB7ZsxIkXgiDq_QHZRTgS:1rQ9dO:ntO1N9n8bVYIHIeHdtoCKNHHRbQ3-B4S0jbT2CDgfzY",
+            "expire_date": "2024-01-31T17:23:26.192Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "wngih0zrg1uu555r0mz2fae9l9zkz8cb",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hCgHSgu3XsGMjAztmpKUtqV8e7apAvd_vfef6mE2zqmrfGSJlJn5dXpd8tYHjzvgO4436oudV6XKetd0Qdt-lqJn5fD_TsYsY3f2sQORQz07PqMvutdCNEFCF4EC4D1nqRDjGDZEg0GB7ZsxIkXgiDq_QHZRTgS:1rQ9mo:wVCrasTiEyFxm27Ixg6rXAoMaN_orCqIhPfUoVUlOVo",
+            "expire_date": "2024-01-31T17:33:10.533Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "ycu8nj7ixor5g56pfkg3kbvh0j6h55wv",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2pCxUBhcuu8ZCDMMUjVtUtqV8e7apAvd_vfef6mYtrXGrckSx6wu6qxOvxslfsi0g3xP023WPE_rMpLeFX3Qpoc5y_N6uH8HNbX6rQMxWodSfIAExnXZQCcEjNBzyD4n7MGgLwROLBc0ngQtIXprimH1_gDa1je4:1rNuC8:n1tG6yzRU4KbqGnx9N2Jrxhi5D9sj5vRqC8_pxI52l0",
+            "expire_date": "2024-01-25T12:30:00.255Z"
+        }
+    },
+    {
+        "model": "website.course",
+        "pk": 1,
+        "fields": {
+            "name": "Nec"
+        }
+    },
+    {
+        "model": "website.course",
+        "pk": 2,
+        "fields": {
+            "name": "Class 8"
+        }
+    }
+]

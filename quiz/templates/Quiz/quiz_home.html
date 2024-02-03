@@ -1,32 +1,24 @@
-{% extends 'base.html' %} {% block body %}
+{% extends 'base.html' %} 
+{% block body %}
 <div class="container my-4">
   <h1>Welcome to DataFlair Quiz</h1>
 
   <div align="right " id="displaytimer"><b>Timer: 0 seconds</b></div>
 
   <form method="post" action="">
-    {% csrf_token %} {% for q in questions%}
+    {% csrf_token %} {% for q in questions %}
     <div class="form-group">
      {{forloop.counter}}. <label for="question">{{q.question}}</label>
     </div>
-    <div class="form-check">
+    {% comment %} <div class="form-check"> {% endcomment %}
       <div class="form-check">
-        {% comment %}
         <input
           class="form-check-input"
           type="radio"
           name="{{q.question}}"
           id="gridRadios1"
           value="option1"
-          checked
-        />
-        {% endcomment %}
-        <input
-          class="form-check-input"
-          type="radio"
-          name="{{q.question}}"
-          id="gridRadios1"
-          value="option1"
+          data-correct="{{q.ans}}"
         />
         <label class="form-check-label" for="gridRadios1"> {{q.op1}} </label>
       </div>
@@ -37,6 +29,7 @@
           name="{{q.question}}"
           id="gridRadios2"
           value="option2"
+          data-correct="{{q.ans}}"
         />
         <label class="form-check-label" for="gridRadios2"> {{q.op2}} </label>
       </div>
@@ -47,6 +40,7 @@
           name="{{q.question}}"
           id="gridRadios1"
           value="option3"
+          data-correct="{{q.ans}}"
         />
         <label class="form-check-label" for="gridRadios1"> {{q.op3}} </label>
       </div>
@@ -57,16 +51,16 @@
           name="{{q.question}}"
           id="gridRadios2"
           value="option4"
+          data-correct="{{q.ans}}"
         />
         <label class="form-check-label" for="gridRadios2"> {{q.op4}} </label>
       </div>
       <br />
-    </div>
+    {% comment %} </div> {% endcomment %}
     {% endfor %}
     <input id="timer" type="hidden" name="timer" value="" />
     <br />
     <div class="d-flex justify-content-center">
-
         <button type="submit" id='quizForm' class="btn btn-primary">Submit</button>
     </div>
   </form>
@@ -74,12 +68,9 @@
   <script>
     console.log("hello world");
     const timer = document.getElementById("displaytimer");
-    console.log(timer.textContent);
     const inputtag = document.getElementById("timer");
-    const quizForm = document.getElementById("quizForm"); // Add this line
+    const quizForm = document.getElementById("quizForm");
 
-
-    {% comment %} let t = 2; {% endcomment %}
     let t = 7200;
     const timerInterval = setInterval(() => {
         const hours = Math.floor(t / 3600);
@@ -96,6 +87,18 @@
           t -= 1;
         }
       }, 1000);
+
+    // Add click event listener to options
+    $('.form-check-input').on('click', function () {
+        const selectedOption = $(this).val();
+        const correctAnswer = $(this).data('correct');
+
+        if (selectedOption === correctAnswer) {
+            $(this).parent().css('color', 'green');
+        } else {
+            $(this).parent().css('color', 'red');
+        }
+    });
   </script>
   {% endblock script %}
 </div>

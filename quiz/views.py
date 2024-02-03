@@ -294,7 +294,7 @@ def sub_title_quiz(request,sub_category=None):
     else:
         course_subtitle = Sub_Category.objects.filter(name=sub_category).first()
         questions = QuesModel.objects.filter(course_subtitle = course_subtitle )[:100]
-
+        print('----questions----',questions)
         # questions=QuesModel.objects.all()
         context = {
             'questions':questions
