@@ -10,7 +10,7 @@ Quiz_CHOICES =[
 ]
 
 class QuesModel(models.Model):
-    course = models.CharField(default='Nec',blank=True,max_length=200, null=True)
+    course = models.ForeignKey(Subject,blank=True,null=True,on_delete=models.SET_NULL)
     course_subtitle = models.ForeignKey(Sub_Category,null=True, on_delete=models.SET_NULL)
     question = models.CharField(max_length=200,null=True)
     op1 = models.CharField(max_length=200,null=True)
@@ -20,4 +20,4 @@ class QuesModel(models.Model):
     ans = models.CharField(max_length=100, choices=Quiz_CHOICES)
     
     def __str__(self):
-        return self.question
+        return self.course + " - "+self.question
