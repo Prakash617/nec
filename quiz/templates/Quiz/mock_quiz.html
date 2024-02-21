@@ -3,7 +3,7 @@
 <div class="container my-4">
   <h1>Welcome to DataFlair Quiz</h1>
 
-  {% comment %} <div align="right " id="displaytimer"><b>Timer: 0 seconds</b></div> {% endcomment %}
+  <div align="right " id="displaytimer"><b>Timer: 0 seconds</b></div>
 
   <form method="post" action="">
     {% csrf_token %} {% for q in questions %}
@@ -60,9 +60,9 @@
     {% endfor %}
     <input id="timer" type="hidden" name="timer" value="" />
     <br />
-    {% comment %} <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center">
         <button type="submit" id='quizForm' class="btn btn-primary">Submit</button>
-    </div> {% endcomment %}
+    </div> 
   </form>
   {% block script %}
   <script>
@@ -89,7 +89,7 @@
       }, 1000);
 
     // Add click event listener to options
-    $('.form-check-input').on('click', function () {
+    {% comment %} $('.form-check-input').on('click', function () {
         const selectedOption = $(this).val();
         const correctAnswer = $(this).data('correct');
 
@@ -98,7 +98,7 @@
         } else {
             $(this).parent().css('color', 'red');
         }
-    });
+    }); {% endcomment %}
   </script>
   {% endblock script %}
 </div>

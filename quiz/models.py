@@ -20,4 +20,4 @@ class QuesModel(models.Model):
     ans = models.CharField(max_length=100, choices=Quiz_CHOICES)
     
     def __str__(self):
-        return self.course + " - "+self.question
+        return self.course.name + " - "+ self.question

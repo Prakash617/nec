@@ -103,12 +103,18 @@
     {% endfor %}
 
 
-
     <li class="border-top my-3"></li>
+    {% comment %} <li class= 'ms-2'> <a href={% url 'quiz_home' %}  type="button" class="btn btn-success" data-mdb-ripple-init>Mock Test</a> </li> {% endcomment %}
+    {% comment %} <a href={% url 'mock_quiz' sub_category_details.name %} class="btn btn-warning" data-mdb-ripple-init>Try quiz</a> {% endcomment %}
+
+    <li class= 'ms-2'> <a  href={% url 'mock_quiz' sub_category_details.name %}   type="button" class="btn btn-success" data-mdb-ripple-init>Mock Test</a> </li>
+
+    {% comment %} <li><a href={% url 'mock_quiz' sub_category_details.name %} class=" btn btn-toggle align-items-center ms-2 rounded rounded text-center text-bg-info">Mock Test</a></li> {% endcomment %}
+
 
     {% comment %} <li><a href={% url 'quiz_home' course_name %} class="link-dark rounded">Mock Test</a></li> {% endcomment %}
     {% comment %} <li><a href={% url 'quiz_home' %} class="link-dark rounded">Mock Test</a></li> {% endcomment %}
-    <li class="mb-1">
+    {% comment %} <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
             Account
         </button>
@@ -122,5 +128,5 @@
                 </li>
             </ul>
         </div>
-    </li>
+    </li> {% endcomment %}
 </ul>
